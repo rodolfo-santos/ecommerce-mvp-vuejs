@@ -1,0 +1,13 @@
+$cor-01: #345;
+$cor-02: #87f;
+$cor-03: #65d;
+%shadow-01 {
+  box-shadow: 0 4px 8px rgba($color: #1e3c5a, $alpha: 0.2);
+}
+%shadow-02 {
+  box-shadow: 0 4px 4px rgba($color: #1e3c5a, $alpha: 0.1);
+}
+
+%font-01 {
+  font-family: "Avenir", Arial, Helvetica, sans-serif;
+}
