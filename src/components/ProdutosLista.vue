@@ -13,12 +13,14 @@
 
 <script>
 import produto from "@/services/produto";
+import { serializeQuery } from "@/helpers";
 
 export default {
   name: "ProdutosLista",
   data() {
     return {
       produtos: null,
+      produtosPorPagina: 9,
     };
   },
 
@@ -27,6 +29,24 @@ export default {
       produto.listar().then((response) => {
         this.produtos = response.data;
       });
+    },
+
+    buscaProdutos() {
+      produto.buscar(this.url, this.produtosPorPagina).then((response) => {
+        this.produtos = response.data;
+      });
+    },
+  },
+
+  computed: {
+    url() {
+      return serializeQuery(this.$route.query);
+    },
+  },
+
+  watch: {
+    url() {
+      this.buscaProdutos();
     },
   },
 
