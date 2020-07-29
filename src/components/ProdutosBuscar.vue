@@ -1,12 +1,7 @@
 <template>
-  <form action="">
-    <input type="text" name="busca" id="busca" v-model="busca" />
-    <input
-      type="submit"
-      id="lupa"
-      value="Buscar"
-      @click.prevent="buscarProdutos"
-    />
+  <form action>
+    <input type="text" name="busca" id="busca" v-model="busca" placeholder="Buscar..." />
+    <input type="submit" id="lupa" value="Buscar" @click.prevent="buscarProdutos" />
     {{ busca }}
   </form>
 </template>
@@ -29,4 +24,39 @@ export default {
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+@import "@/assets/scss/helpers";
+
+form {
+  max-width: 600px;
+  margin: 30px auto 60px auto;
+  position: relative;
+}
+
+#busca {
+  width: 100%;
+  @extend %shadow-01;
+  padding: 20px;
+  border: none;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    transform: scale(1.1);
+    @extend %shadow-03;
+  }
+}
+
+#lupa {
+  width: 62px;
+  height: 62px;
+  background: url("../assets/search.svg") no-repeat center center;
+  text-indent: -150px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  box-shadow: none;
+}
+</style>

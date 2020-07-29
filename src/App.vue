@@ -87,4 +87,23 @@ img {
 main {
   flex: 1;
 }
+
+input,
+textarea {
+  border-radius: 4px;
+  border: 1px solid white;
+  padding: 15px;
+  @extend %shadow-01;
+  transition: all 0.3s;
+  font-size: 1rem;
+  @extend %font-01;
+  margin-bottom: 15px;
+
+  &:hover,
+  &:focus {
+    outline: none;
+    @extend %shadow-03;
+    border-color: $cor-02;
+  }
+}
 </style>
