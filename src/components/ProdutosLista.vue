@@ -1,18 +1,22 @@
 <template>
   <section class="produtos-contatiner">
-    <div v-if="produtos && produtos.length" class="produtos">
-      <div v-for="produto in produtos" :key="produto.id" class="produto">
-        <router-link to="/">
-          <img />
-          <p class="preco">{{ produto.preco }}</p>
-          <h2 class="titulo">{{ produto.nome }}</h2>
-          <p class="descricao">{{ produto.descricao }}</p>
-        </router-link>
+    <transition mode="out-in">
+      <div v-if="produtos && produtos.length" class="produtos" key="produtos">
+        <div v-for="(produto, index) in produtos" :key="index" class="produto">
+          <router-link to="/">
+            <img />
+            <p class="preco">{{ produto.preco }}</p>
+            <h2 class="titulo">{{ produto.nome }}</h2>
+            <p class="descricao">{{ produto.descricao }}</p>
+          </router-link>
+        </div>
+        <ProdutosPaginar :produtosTotal="produtosTotal" :produtosPorPagina="produtosPorPagina" />
       </div>
-    </div>
-    <div v-else-if="produtos && produtos.length === 0">
-      <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
-    </div>
+      <div v-else-if="produtos && produtos.length === 0" key="sem-resultados">
+        <p class="sem-resultados">Busca sem resultados. Tente buscar outro termo.</p>
+      </div>
+      <PaginaCarregando key="carregando" v-else />
+    </transition>
   </section>
 </template>
 
@@ -20,24 +24,26 @@
 import produto from "@/services/produto";
 import { serializeQuery } from "@/helpers";
 
+import ProdutosPaginar from "./ProdutosPaginar.vue";
+
 export default {
   name: "ProdutosLista",
+  components: {
+    ProdutosPaginar,
+  },
   data() {
     return {
       produtos: null,
       produtosPorPagina: 9,
+      produtosTotal: 0,
     };
   },
 
   methods: {
     getProdutos() {
-      produto.listar().then((response) => {
-        this.produtos = response.data;
-      });
-    },
-
-    buscaProdutos() {
+      this.produtos = null;
       produto.buscar(this.url, this.produtosPorPagina).then((response) => {
+        this.produtosTotal = Number(response.headers["x-total-count"]);
         this.produtos = response.data;
       });
     },
@@ -51,7 +57,7 @@ export default {
 
   watch: {
     url() {
-      this.buscaProdutos();
+      this.getProdutos();
     },
   },
 
