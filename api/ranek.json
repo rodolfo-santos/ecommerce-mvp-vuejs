@@ -10,6 +10,18 @@
       "cep": "12241421",
       "estado": "SP",
       "cidade": "São José dos Campos"
+    },
+
+    {
+      "id": "jorge@gmail.com",
+      "email": "jorge@gmai.com",
+      "nome": "Jorge Santos",
+      "senha": "123",
+      "rua": "Rua Oswaldo de Pinto",
+      "numero": "1160",
+      "cep": "12241421",
+      "estado": "SP",
+      "cidade": "São José dos Campos"
     }
   ],
   "produto": [
