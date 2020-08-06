@@ -33,7 +33,7 @@ export default {
 
   methods: {
     getProduto() {
-      produto.produtoUnico(this.id).then((response) => {
+      produto.produto_unico(this.id).then((response) => {
         this.produto = response.data;
       });
     },

@@ -1,10 +1,63 @@
 <template>
-  <h2>Lista de Produtos</h2>
+  <section>
+    <h2>Lista de Produtos</h2>
+    <ProdutoAdicionar />
+    <h2>Seus Produtos</h2>
+    <transition-group name="list" tag="ul" v-if="usuario_produtos">
+      <li v-for="(produto) in usuario_produtos.slice().reverse()" :key="produto.id">
+        <ProdutoItem :produto="produto">
+          <p>{{produto.descricao}}</p>
+        </ProdutoItem>
+      </li>
+    </transition-group>
+  </section>
 </template>
 
 <script>
-export default {};
+import ProdutoAdicionar from "@/components/ProdutoAdicionar.vue";
+import ProdutoItem from "@/components/ProdutoItem.vue";
+import { mapState, mapActions } from "vuex";
+
+export default {
+  name: "UsuarioProdutos",
+  components: {
+    ProdutoAdicionar,
+    ProdutoItem,
+  },
+
+  computed: {
+    ...mapState(["login", "usuario", "usuario_produtos"]),
+  },
+
+  methods: {
+    ...mapActions(["getUsuarioProdutos"]),
+  },
+
+  watch: {
+    login() {
+      this.getUsuarioProdutos();
+    },
+  },
+
+  created() {
+    if (this.login) this.getUsuarioProdutos();
+  },
+};
 </script>
 
-<style>
+<style lang="scss" scoped>
+h2 {
+  margin-bottom: 20px;
+}
+
+.list-enter,
+.list-leave-to {
+  opacity: 0;
+  transition: translate3d(20px, 0, 0);
+}
+
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.3s;
+}
 </style>

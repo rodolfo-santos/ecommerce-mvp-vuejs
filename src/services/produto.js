@@ -10,7 +10,16 @@ export default {
     return http.get(`produto/?_limit=${limit}${query}`);
   },
 
-  produtoUnico: (id) => {
+  produto_unico: (id) => {
     return http.get(`produto/${id}`);
+  },
+
+  produtos_usuario: (id_usuario) => {
+    return http.get(`produto?usuario_id=${id_usuario}`);
+  },
+
+  adicionar: (produto) => {
+    console.log(produto);
+    return http.post(`produto`, produto);
   },
 };

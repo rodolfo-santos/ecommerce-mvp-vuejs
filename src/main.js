@@ -20,6 +20,10 @@ Vue.filter("numeroPreco", (valor) => {
   }
 });
 
+Vue.filter("reverse", (valor) => {
+  return valor.slice().reverse();
+});
+
 new Vue({
   router,
   store,

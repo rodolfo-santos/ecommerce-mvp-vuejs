@@ -1,6 +1,7 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import Usuario from "@/services/usuario";
+import Produto from "@/services/produto";
 
 Vue.use(Vuex);
 
@@ -20,16 +21,32 @@ export default new Vuex.Store({
       cidade: "",
       estado: "",
     },
+    usuario_produtos: null,
   },
   mutations: {
     UPDATE_LOGIN(state, payload) {
       state.login = payload;
     },
+
     UPDATE_USUARIO(state, payload) {
       state.usuario = Object.assign(state.usuario, payload);
     },
+
+    UPDATE_USUARIO_PRODUTOS(state, payload) {
+      state.usuario_produtos = payload;
+    },
+
+    // ADD_USUARIO_PRODUTOS(state, payload) {
+    //   state.usuario_produtos.unshift(payload);
+    // },
   },
   actions: {
+    getUsuarioProdutos(context) {
+      Produto.produtos_usuario(context.state.usuario.id).then((response) => {
+        context.commit("UPDATE_USUARIO_PRODUTOS", response.data);
+      });
+    },
+
     getUsuario(context, payload) {
       return Usuario.getUsuario(payload).then((response) => {
         context.commit("UPDATE_USUARIO", response.data);
@@ -41,6 +58,7 @@ export default new Vuex.Store({
       context.commit("UPDATE_USUARIO", { id: payload.email });
       return Usuario.postUsuario(payload);
     },
+
     deslogarUsuario(context) {
       context.commit("UPDATE_USUARIO", {
         id: "",
