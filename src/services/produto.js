@@ -19,7 +19,10 @@ export default {
   },
 
   adicionar: (produto) => {
-    console.log(produto);
     return http.post(`produto`, produto);
+  },
+
+  deletar: (id) => {
+    return http.delete(`produto/${id}`);
   },
 };

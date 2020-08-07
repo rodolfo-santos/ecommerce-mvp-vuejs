@@ -48,7 +48,7 @@
     },
     {
       "id": "jubileu@gmail.com",
-      "nome": "Jubileu",
+      "nome": "Jubileus",
       "email": "jubileu@gmail.com",
       "senha": "123",
       "cep": "12241380",
@@ -585,51 +585,11 @@
     },
     {
       "nome": "aaa",
-      "preco": "1212",
-      "descricao": "asdfsadf",
-      "fotos": null,
-      "usuario_id": "jubileu@gmail.com",
-      "id": "BDH2FcX"
-    },
-    {
-      "nome": "Ameixa",
-      "preco": "222",
-      "descricao": "1232131",
-      "fotos": null,
-      "usuario_id": "jubileu@gmail.com",
-      "id": "nRcMCFx"
-    },
-    {
-      "nome": "aaa",
       "preco": "222",
       "descricao": "asdfsadf",
       "fotos": null,
       "usuario_id": "jubileu@gmail.com",
       "id": "pT7EfbR"
-    },
-    {
-      "nome": "aaa",
-      "preco": "222",
-      "descricao": "asdf",
-      "fotos": null,
-      "usuario_id": "jubileu@gmail.com",
-      "id": "o0HQuDE"
-    },
-    {
-      "nome": "aaa",
-      "preco": "3232",
-      "descricao": "asdfsaf",
-      "fotos": null,
-      "usuario_id": "jubileu@gmail.com",
-      "id": "4zZANdQ"
-    },
-    {
-      "nome": "aaa",
-      "preco": "1212",
-      "descricao": "asdfsadf",
-      "fotos": null,
-      "usuario_id": "jubileu@gmail.com",
-      "id": "v3tDQt-"
     },
     {
       "nome": "Rodolfo dos Santos",
@@ -662,14 +622,6 @@
       "fotos": null,
       "usuario_id": "",
       "id": "Rkp-voq"
-    },
-    {
-      "nome": "dasdfa",
-      "preco": "12122",
-      "descricao": "1asdfsadf",
-      "fotos": null,
-      "usuario_id": "jubileu@gmail.com",
-      "id": "NKK-UjV"
     },
     {
       "nome": "aaaa",
