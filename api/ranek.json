@@ -1,4 +1,72 @@
 {
+  "transacao": [
+    {
+      "comprador_id": "Jubileus",
+      "vendedor_id": "rodolfo@gmail.com",
+      "produto": {
+        "id": "smartphone",
+        "nome": "Smartphone",
+        "usuario_id": "rodolfo@gmail.com",
+        "preco": "1999",
+        "vendido": "false",
+        "descricao": "Esse é um novo smartphone.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "",
+        "rua": "",
+        "numero": "",
+        "bairro": "",
+        "cidade": "",
+        "estado": ""
+      },
+      "id": 1
+    },
+    {
+      "comprador_id": "jubileu@gmail.com",
+      "vendedor_id": "rodolfo@gmail.com",
+      "produto": {
+        "id": "notebook",
+        "nome": "Notebook",
+        "usuario_id": "rodolfo@gmail.com",
+        "preco": "4999",
+        "vendido": "false",
+        "descricao": "Esse é um novo notebook.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "12241380",
+        "rua": "Rua Oswaldo de Pinto Guimarães",
+        "numero": "93",
+        "bairro": "Jardim Limoeiro",
+        "cidade": "São José dos Campos",
+        "estado": "SP"
+      },
+      "id": 2
+    },
+    {
+      "comprador_id": "rodolfoteste@gmail.com",
+      "vendedor_id": "rodolfo@gmail.com",
+      "produto": {
+        "id": "smartphone",
+        "nome": "Smartphone",
+        "usuario_id": "rodolfo@gmail.com",
+        "preco": "1999",
+        "vendido": "false",
+        "descricao": "Esse é um novo smartphone.",
+        "fotos": null
+      },
+      "endereco": {
+        "cep": "12241440",
+        "rua": "Rua da Palha",
+        "numero": "93",
+        "bairro": "Jardim Limoeiro",
+        "cidade": "São José dos Campos",
+        "estado": "SP"
+      },
+      "id": 3
+    }
+  ],
   "usuario": [
     {
       "id": "rodolfo@gmail.com",
@@ -53,6 +121,18 @@
       "senha": "123",
       "cep": "12241380",
       "rua": "Rua Oswaldo de Pinto Guimarães",
+      "numero": "93",
+      "bairro": "Jardim Limoeiro",
+      "cidade": "São José dos Campos",
+      "estado": "SP"
+    },
+    {
+      "id": "rodolfoteste@gmail.com",
+      "nome": "RodolfoTeste",
+      "email": "rodolfoteste@gmail.com",
+      "senha": "123",
+      "cep": "12241440",
+      "rua": "Rua da Palha",
       "numero": "93",
       "bairro": "Jardim Limoeiro",
       "cidade": "São José dos Campos",

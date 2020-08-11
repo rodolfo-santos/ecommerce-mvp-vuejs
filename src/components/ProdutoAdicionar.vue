@@ -25,6 +25,7 @@ export default {
         descricao: "",
         fotos: null,
         usuario_id: "",
+        vendido: "false",
       },
     };
   },
