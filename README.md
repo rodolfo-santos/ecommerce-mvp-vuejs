@@ -1,4 +1,6 @@
-<img src="./docs/assets/banner.gif" />
+<div align="center">
+  <img src="./docs/assets/banner.gif" />
+</div>
 
 <br/>
 
